@@ -72,15 +72,17 @@ const pizzas = [
     }
 ]
 
+/* EJERCICIO 3 */
+
+let pizzaLocalStorage = JSON.parse(localStorage.getItem("pizzas") || [])
+
+const savedLocalStorage = () => localStorage.setItem("pizzas", JSON.stringify(pizzas));
+
 /* EJERCICIO 2 */
 
 const resultSection = document.getElementById("result__section")
 const form = document.getElementById("form")
 const input = document.querySelector(".form__input")
-
-let pizzaLocalStorage = JSON.parse(localStorage.getItem("pizzas") || [])
-
-const savedLocalStorage = () => localStorage.setItem("pizzas", JSON.stringify(pizzas));
 
 const searchPizza = (value) => pizzas.find((pizza) => pizza.id === value)
 
