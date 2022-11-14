@@ -7,6 +7,7 @@ const pizzas = [
             "aceituna",
             "muzzarella",
         ],
+        image: "https://betos.com.ar/wp-content/uploads/2019/08/pizza-muzarella.png"
     },
     {
         id: 2,
@@ -19,6 +20,7 @@ const pizzas = [
             "muzzarela",
             "tomate"
         ],
+        image: "https://www.muchomasquepizza.com/alicante/wp-content/uploads/images/products/products-mediterranea500x500.png"
     },
     {
         id: 3,
@@ -29,6 +31,7 @@ const pizzas = [
             "Muzzarela",
             "Aceitunas"
         ],
+        image: "https://betos.com.ar/wp-content/uploads/2019/08/pizza-calabresa.png"
     },
     {
         id: 4,
@@ -40,6 +43,7 @@ const pizzas = [
             "huevo",
             "Aceitunas"
         ],
+        image: "https://margherita.com.ar/wp-content/uploads/2019/09/pespecialhuevo.png"
     },
     {
         id: 5,
@@ -50,6 +54,7 @@ const pizzas = [
             "Muzzarela",
             "Jamón"
         ],
+        image: "https://www.pizzafrog.com.ar/wp-content/uploads/2018/04/jamon-morron-frog.png"
     },
     {
         id: 6,
@@ -63,6 +68,7 @@ const pizzas = [
             "Nuez",
             "Roquefort"
         ],
+        image: "https://betos.com.ar/wp-content/uploads/2019/08/Fugazzeta.png"
     }
 ]
 
@@ -71,6 +77,10 @@ const pizzas = [
 const resultSection = document.getElementById("result__section")
 const form = document.getElementById("form")
 const input = document.querySelector(".form__input")
+
+let pizzaLocalStorage = JSON.parse(localStorage.getItem("pizzas") || [])
+
+const savedLocalStorage = () => localStorage.setItem("pizzas", JSON.stringify(pizzas));
 
 const searchPizza = (value) => pizzas.find((pizza) => pizza.id === value)
 
@@ -93,6 +103,7 @@ const renderResult = (pizza) => {
     } else {
       resultSection.innerHTML = `
       <div class="pizza__section">
+      <img class="pizza__img" src="${ pizza.image}"/>
       <h2 class="pizza__title">${pizza.nombre.toUpperCase()}</h2>
       <p class="pizza__description">Ingredientes: ${pizza.ingredientes.join(", ")}.</p>
       <h3 class="pizza__price"> Precio: $${pizza.precio} </h3>

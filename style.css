@@ -96,3 +96,29 @@ main{
   color: var(--pink);
 }
 
+.pizza__img{
+  position: relative;
+  width: 50%;
+  height: 60%;
+  top: -10px;
+  
+  animation: move 3s ease-in-out infinite;
+}
+
+@keyframes move {
+  50% {
+     transform: translate(0px, -10px);
+  }
+}
+
+.result__section{
+  width: 30%;
+  height: 70%;
+  padding: 40px 15px;
+  border: 1px solid white;
+  border-radius: 25px;
+  box-shadow: 2px 2px 25px  blue,
+              -2px -2px 25px  red;
+  cursor: pointer;
+}
+
