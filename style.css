@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --green: #99b898;
   --pinklight: #FECEA8;
   --pink: #ff847c;
   --red: #e84a5f;
-  --black: #2a363b;
+  --black: #101111;
+  --white: rgb(248, 246, 246);
 }
 
 body{
@@ -40,63 +40,72 @@ main{
   color: var(--pinklight);
 }
 
-.form__label{
+.label-text{
   margin-bottom: 15px;
   font-size: 1.25em;
   text-transform: uppercase;
 }
 
-.form__input{
-  background-color: var(--green);
+.form-input{
+  background-color: var(--black);
   width: 200px;
   border-radius: 25px;
-  border: 2px solid var(--pinklight);
-  padding: 2px;
+  border: 2px solid var(--white);
+  padding: 5px;
+  color: var(--white);
+ 
 }
 
-.form__btn{
-  background-color: var(--green);
-  color: var(--black);
+.form-btn{
+  background-color: var(--black);
+  color: var(--white);
   border-radius: 25px;
-  border: 2px solid var(--pinklight);
-  padding: 2px;
+  border: 2px solid var(--white);
+  padding: 5px;
   margin-left: 5px;
+  animation: scale 1.5s ease infinite;
 }
 
-.form__btn:hover{
+.form-btn:hover{
+  background-color: var(--white);
+  color: var(--black);
+}
+
+@keyframes scale {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.form-btn:hover{
   transform: scale(1.1);
 }
 
-.showerrordiv{
+.result-error{
   width: 70%;
   color: var(--red);
-}
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}  
 
-.pizza__section{
+.pizza-section{
   color: var(--pinklight);
 }
 
-.error{
+.text-error{
   color: var(--red);
 }
 
-.error__p{
-  color: var(--red);
+.pizza-price{
+  color: var(--black);
 }
 
-.fa-sharp{
-  color: var(--red);
-}
-
-.pizza__price{
-  color: var(--green);
-}
-
-.pizza__title{
+.pizza-img{
   color: var(--pink);
 }
 
-.pizza__img{
+.pizza-img{
   position: relative;
   width: 50%;
   height: 60%;
@@ -111,7 +120,7 @@ main{
   }
 }
 
-.result__section{
+#result-section{
   width: 30%;
   height: 70%;
   padding: 40px 15px;
